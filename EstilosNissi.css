@@ -114,12 +114,13 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.productos {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  align-items: stretch;
+
+.producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .producto {
@@ -130,7 +131,18 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 420px;
 }
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  /*align-items: stretch;*/
+  align-items: flex-start;
+}
+
 
 
 
@@ -140,12 +152,15 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+
+
+
 .producto p {
   font-size: 14px;
   color: #6b4226;
   margin-bottom: 16px;
+  min-height: 80px;
 }
-
 .producto span {
   background-color: #3b1f0e;
   color: #f5ede0;
@@ -181,9 +196,70 @@ footer {
   font-size: 14px;
 }
 
+/* logos de redes*/
+
+.redes {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes a {
+  color: #f5ede0;
+  font-size: 24px;
+}
+
+.redes a:hover {
+  color: #c8913a;
+}
 
 
-/* Estilos para dispositivos móviles */
+
+    /*esto es para el envio de cliente desde la pagina   */
+
+    
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    border: 2px solid #3b1f0e;
+    border-radius: 10px;
+    background-color: #f5ede0;
+    color: #3b1f0e;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+  }
+
+  .formulario textarea {
+    height: 140px;
+    resize: none;
+  }
+
+  .formulario button {
+    background-color: #3b1f0e;
+    color: #f5ede0;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .formulario button:hover {
+    background-color: #c8913a;
+  }
+
+  /* Estilos para dispositivos móviles */
 
 
 @media (max-width: 768px) {
