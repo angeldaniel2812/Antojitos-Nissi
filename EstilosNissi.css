@@ -168,7 +168,79 @@ nav a:hover {
   border-radius: 20px;
   font-size: 14px;
 }
+.boton-pedido {
+  display: block;
+  background-color: #25D366;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+}
 
+.boton-pedido:hover {
+  background-color: #1da851;
+}
+
+.divisor {
+  text-align: center;
+  padding: 20px;
+  background-color: #ecddc8;
+  color: #c8913a;
+  font-size: 20px;
+}
+
+/* Estilos para la sección de nosotros */ 
+
+#nosotros {
+  position: relative;
+  padding: 0;
+  text-align: justify;
+}
+
+#nosotros::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Fondo_nosotros.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+
+.nosotros-overlay {
+  position: relative;
+  padding: 80px 40px;
+}
+
+#nosotros h2 {
+  font-size: 36px;
+  color: #3b1f0e;
+  margin-bottom: 30px;
+  text-shadow: 4px 4px 2px rgb(255, 255, 255);
+}
+
+.nosotros-cuadro {
+  background-color: rgba(253, 246, 236, 0.85);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.nosotros-cuadro p {
+  font-size: 18px;
+  color: #6b4226;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+
+/* Estilos para la sección de contacto */ 
 
 #contacto {
   background-color: #ecddc8;
@@ -259,8 +331,43 @@ footer {
     background-color: #c8913a;
   }
 
-  /* Estilos para dispositivos móviles */
+  /* Estilo   ---    Flotantes  */
 
+  .flotantes {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.flotantes a {
+  color: #f5ede0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.flotantes a:hover {
+  background-color: #c8913a;
+}
+
+
+  /* Estilos para dispositivos móviles */
 
 @media (max-width: 768px) {
 
