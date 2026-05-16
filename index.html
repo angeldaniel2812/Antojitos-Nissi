@@ -30,6 +30,7 @@
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#menu">Menú</a>
+        <a href="#galeria">Galería</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -49,11 +50,20 @@
     
     <section id="menu">
       <h2>Nuestro Menú</h2>
+      
+      <div class="categorias">
+        <button class="categoria activo" onclick="filtrar('todos')">Todos</button>
+        <button class="categoria" onclick="filtrar('tortas')">Tortas</button>
+        <button class="categoria" onclick="filtrar('postres')">Postres</button>
+        <button class="categoria" onclick="filtrar('ponqués')">Ponqué</button>
+        <!-- <button class="categoria" onclick="filtrar('bebidas')">Bebidas</button> -->
+      </div>
 
       <div class="productos">
 
-        <div class="producto">
-          <img src="Pavê.jpeg" alt="Pavé">
+
+        <div class="producto" data-categoria="postres" >
+          <img src="pavê.jpeg" alt="Pavé">
           <h3>Pavê</h3>
           <p>Postre a base de crema bit, con galleta y topin a gusto. Es un postre típico de la cocina brasileña  </p>
           <p>Chocorramo - Fresa - Leche en Polvo - Brownie - Oreo - Piazza Nucita - 9 oz</p>
@@ -63,7 +73,7 @@
           </a>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="postres">
           <img src="Tres Leches.jpeg" alt="Tres Leches">
           <h3>Tres Leches</h3>
           <p>Bizcocho bañado con tres tipos de lácteos, terminando con una deliciosa chantilly y topin al gusto</p>
@@ -74,7 +84,7 @@
           </a>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="tortas">
           <img src="Torta Clasica.png" alt="Clásica">
           <h3>Clásica</h3>
           <p>Mantecada con relleno italiano </p>
@@ -85,7 +95,7 @@
           </a>
         </div>
 
-        <div class="producto">
+        <div class="producto" data-categoria="tortas">
           <img src="Torta Queso.png" alt="Torta de Queso">
           <h3>Torta de Queso</h3>
           <p>Torta de queso</p>
@@ -96,7 +106,7 @@
           </a>
         </div>
         
-        <div class="producto">
+        <div class="producto" data-categoria="ponqués">
           <img src="Ponqué de Natas.png" alt="Ponqué de Natas">
           <h3>Ponqué Natas</h3>
           <p>Deliciosa torta de Nata con tu relleno favorito</p>
@@ -130,6 +140,29 @@
 
       </div>
     </section>
+
+
+
+  <section id="galeria">
+    <h2>Nuestra Galería</h2>
+    <div class="carrusel">
+      <button class="flecha izquierda" onclick="moverCarrusel(-1)">&#8592;</button>
+      <div class="carrusel-track">
+        <img src="Gal1.png" alt="Foto 1" onclick="abrirFoto(this)">
+        <img src="Gal2.png" alt="Foto 2" onclick="abrirFoto(this)">
+        <img src="Gal3.png" alt="Foto 3" onclick="abrirFoto(this)">
+        <img src="Gal4.png" alt="Foto 4" onclick="abrirFoto(this)">
+        <img src="Gal5.png" alt="Foto 5" onclick="abrirFoto(this)">
+        <img src="Gal6.png" alt="Foto 6" onclick="abrirFoto(this)">
+      </div>
+      <button class="flecha derecha" onclick="moverCarrusel(1)">&#8594;</button>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="cerrarFoto()">
+      <span>✕</span>
+      <img id="foto-grande" src="">
+    </div>
+    <div class="puntos" id="puntos"></div>
+  </section>
 
   <div class="divisor">
     <span>✦ ✦ ✦</span>
@@ -196,5 +229,6 @@
     </a>
   </div>
 
+    <script src="script.js"></script>
   </body>
 </html>
