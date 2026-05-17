@@ -30,8 +30,10 @@
         <a href="#inicio">Inicio</a>
         <a href="#menu">Menú</a>
         <a href="#galeria">Galería</a>
+        <a href="#videos">Videos</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
+        
       </nav>
     </header>
 
@@ -63,7 +65,7 @@
 
 
         <div class="producto" data-categoria="postres" >
-          <img src="Pave.jpeg" alt="Pavé">
+          <img src="Pave123.jpeg" alt="Pavé">
           <h3>Pavê</h3>
           <p>Postre a base de crema bit, con galleta y topin a gusto. Es un postre típico de la cocina brasileña  </p>
           <p>Chocorramo - Fresa - Leche en Polvo - Brownie - Oreo - Piazza Nucita - 9 oz</p>
@@ -178,6 +180,44 @@
     </div>
     <div class="puntos" id="puntos"></div>
   </section>
+
+
+  <section id="videos">
+    <h2>Nuestros Momentos</h2>
+    <div class="videos-grid">
+
+      <div class="video-card" onclick="abrirVideo('0QlpgpwAbRg')">
+        <img src="https://img.youtube.com/vi/0QlpgpwAbRg/0.jpg" alt="Video 1">
+        <span class="play-icon">▶</span>
+      </div>
+
+      <div class="video-card" onclick="abrirVideo('Cqx8cLTWZKw')">
+        <img src="https://img.youtube.com/vi/Cqx8cLTWZKw/0.jpg" alt="Video 2">
+        <span class="play-icon">▶</span>
+      </div>
+
+      <div class="video-card" onclick="abrirVideo('1MG4hGR-HLA')">
+        <img src="https://img.youtube.com/vi/1MG4hGR-HLA/0.jpg" alt="Video 3">
+        <span class="play-icon">▶</span>
+      </div>
+
+      <div class="video-card" onclick="abrirVideo('S5b_DOgKP4c')">
+        <img src="https://img.youtube.com/vi/S5b_DOgKP4c/0.jpg" alt="Video 4">
+        <span class="play-icon">▶</span>
+      </div>
+
+    </div>
+
+
+    <div class="video-lightbox" id="video-lightbox">
+      <div class="video-overlay" onclick="cerrarVideo()"></div>
+      <span class="cerrar-video" onclick="cerrarVideo()">✕</span>
+      <iframe id="video-frame" src="" allowfullscreen></iframe>
+    </div>
+
+  </section>
+
+
 
   <div class="divisor">
     <span>✦ ✦ ✦</span>

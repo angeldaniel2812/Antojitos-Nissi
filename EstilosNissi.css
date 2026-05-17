@@ -377,6 +377,122 @@ nav a:hover {
 }
 
 
+/* Estilos para la sección de video */
+#videos {
+  padding: 60px 40px;
+  background-color: #825539;
+  text-align: center;
+}
+
+#videos h2 {
+  font-size: 36px;
+  color: #f5ede0;
+  margin-bottom: 40px;
+}
+
+.video-card {
+  position: relative;
+  border-radius: 16px;
+  height: 180px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background-color: #ecddc8;
+  border-radius: 16px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  background-color: #c8913a;
+}
+
+.video-thumb span {
+  font-size: 50px;
+  color: #3b1f0e;
+}
+
+.video-card:hover .video-thumb span {
+  color: #f5ede0;
+}
+
+.video-lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video-lightbox iframe {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  height: 70%;
+  border-radius: 12px;
+  border: none;
+}
+
+.cerrar-video {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 3;
+}
+
 /* Estilos para la sección de contacto */ 
 
 #contacto {

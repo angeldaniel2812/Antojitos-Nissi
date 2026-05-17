@@ -74,3 +74,19 @@ function cerrarFoto() {
   const lightbox = document.getElementById('lightbox');
   lightbox.style.display = 'none';
 }
+
+
+
+function abrirVideo(id) {
+  const lightbox = document.getElementById('video-lightbox');
+  const frame = document.getElementById('video-frame');
+  frame.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+  lightbox.style.display = 'flex';
+}
+
+function cerrarVideo() {
+  const lightbox = document.getElementById('video-lightbox');
+  const frame = document.getElementById('video-frame');
+  lightbox.style.display = 'none';
+  frame.src = '';
+}
