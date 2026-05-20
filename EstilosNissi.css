@@ -653,4 +653,17 @@ footer {
     width: 90%;
   }
 
+
+  .btn-admin {
+    background: #3C3489;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .btn-admin:hover {
+    background: #534AB7;
+  }
 }
