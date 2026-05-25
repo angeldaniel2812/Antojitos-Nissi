@@ -287,13 +287,17 @@ nav a:hover {
   border-radius: 12px;
 }
 
-.lightbox span {
+.cerrar-lightbox {
   position: absolute;
   top: 20px;
   right: 30px;
   color: white;
   font-size: 30px;
   cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
 }
 
 .flecha {
@@ -372,6 +376,11 @@ nav a:hover {
   color: #3b1f0e;
   margin-bottom: 30px;
   text-shadow: 4px 4px 2px rgb(255, 255, 255);
+  text-align: center;
+}
+
+.texto-centro {
+  text-align: center;
 }
 
 .nosotros-cuadro {
@@ -480,6 +489,10 @@ nav a:hover {
   font-size: 40px;
   cursor: pointer;
   z-index: 3;
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
 }
 
 /* Estilos para la sección de contacto */ 
