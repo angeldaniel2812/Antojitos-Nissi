@@ -1,22 +1,13 @@
-function filtrar(categoria) {
-
+function filtrar(event, categoria) {
   const productos = document.querySelectorAll('.producto');
   const botones = document.querySelectorAll('.categoria');
 
-  botones.forEach(boton => {
-    boton.classList.remove('activo');
-  });
-
+  botones.forEach(boton => boton.classList.remove('activo'));
   event.target.classList.add('activo');
 
   productos.forEach(producto => {
-    if (categoria === 'todos') {
-      producto.style.display = 'flex';
-    } else if (producto.dataset.categoria === categoria) {
-      producto.style.display = 'flex';
-    } else {
-      producto.style.display = 'none';
-    }
+    const visible = categoria === 'todos' || producto.dataset.categoria === categoria;
+    producto.style.display = visible ? 'flex' : 'none';
   });
 }
 
@@ -24,6 +15,7 @@ function filtrar(categoria) {
 
 
 let indice = 0;
+let intervaloCarrusel;
 
 function moverCarrusel(direccion) {
   const track = document.querySelector('.carrusel-track');
@@ -51,17 +43,26 @@ function iniciarPuntos() {
     punto.classList.add('punto');
     if (i === 0) punto.classList.add('activo');
     punto.onclick = () => {
-      indice = i - 1;
-      moverCarrusel(1);
+      indice = i;
+      moverCarrusel(0);
     };
     contenedor.appendChild(punto);
   });
 }
 
-iniciarPuntos();
+function iniciarAutoplay() {
+  intervaloCarrusel = setInterval(() => moverCarrusel(1), 4000);
+}
 
-// Cambia foto automaticamente cada 4 segundos
-setInterval(() => moverCarrusel(1), 4000);
+// Pausa el autoplay al pasar el mouse sobre el carrusel
+const carrusel = document.querySelector('.carrusel');
+if (carrusel) {
+  carrusel.addEventListener('mouseenter', () => clearInterval(intervaloCarrusel));
+  carrusel.addEventListener('mouseleave', iniciarAutoplay);
+}
+
+iniciarPuntos();
+iniciarAutoplay();
 
 function abrirFoto(img) {
   const lightbox = document.getElementById('lightbox');
@@ -89,4 +90,31 @@ function cerrarVideo() {
   const frame = document.getElementById('video-frame');
   lightbox.style.display = 'none';
   frame.src = '';
+}
+
+// Cierra cualquier lightbox con la tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    cerrarFoto();
+    cerrarVideo();
+  }
+});
+
+// ─── SCROLL REVEAL ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// ─── PWA: REGISTRO DEL SERVICE WORKER ───
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
 }

@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antojitos Nissi</title>
-    
-    <link rel="stylesheet" href="EstilosNissi.css">
+    <meta name="description" content="Antojitos Nissi – tortas, postres, ponqués y galletas artesanales hechos con amor en Colombia. Pedidos por WhatsApp.">
+    <meta property="og:title" content="Antojitos Nissi">
+    <meta property="og:description" content="Tortas, postres y ponqués artesanales hechos con amor.">
+    <meta property="og:image" content="logo_Nissi.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="EstilosNissi.css?v=2">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#753e1c">
+    <link rel="apple-touch-icon" href="logo_Nissi.jpeg">
+    <!-- Schema markup negocio local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Antojitos Nissi",
+      "description": "Tortas, postres, ponqués y galletas artesanales hechos con amor en Colombia.",
+      "telephone": "+573143260400",
+      "email": "antojotosnissi87@gmail.com",
+      "url": "https://angeldaniel2812.github.io/Antojitos-Nissi/",
+      "image": "logo_Nissi.jpeg",
+      "priceRange": "$",
+      "servesCuisine": "Panadería y Repostería Artesanal",
+      "openingHours": "Mo-Sa 07:00-20:00",
+      "sameAs": ["https://www.instagram.com/nissi_antojitos/"]
+    }
+    </script>
         <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4J7SD6C81"></script>
     
@@ -33,32 +58,34 @@
       <a href="#videos">Videos</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
-      <a href="https://nissi-admin-hemocha.netlify.app" target="_blank" class="btn-admin">🔐 Admin</a>
+      <a href="https://nissi-admin-hemocha.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-admin">🔐 Admin</a>
     </nav>
     </header>
 
-    <section id="inicio">
+    <section id="inicio" data-reveal>
       <img src="logo_Nissi.jpeg" alt="Logo Antojitos Nissi">
       <h2>Bienvenido a Antojitos Nissi</h2>
-      <p>&#9749;&#9749;  La mejor cafetería de la ciudad, haciendo todo con amor y mucha dedicación  &#127856;&#127856;</p>
-      <p>Donde un aperitivo es la mejor solución, para el corazón </p>
+      <p>☕☕ La mejor cafetería de la ciudad, haciendo todo con amor y mucha dedicación 🍰🍰</p>
+      <p>Donde un aperitivo es la mejor solución, para el corazón</p>
       <p>"Todas las personas mayores fueron al principio niños, aunque pocas de ellas lo recuerdan"</p>
-      <p> </p>
-      <a href="#menu">Ver nuestro menú</a>
+      <div class="inicio-botones">
+        <a href="#menu">Ver nuestro menú</a>
+        <a href="https://wa.me/573143260400?text=Hola!%20Quiero%20hacer%20un%20pedido%20🍰" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero">💬 Hacer un pedido</a>
+      </div>
     </section>
   
 
     
-    <section id="menu">
+    <section id="menu" data-reveal>
       <h2>Nuestro Menú</h2>
       
       <div class="categorias">
-        <button class="categoria activo" onclick="filtrar('todos')">Todos</button>
-        <button class="categoria" onclick="filtrar('tortas')">Tortas</button>
-        <button class="categoria" onclick="filtrar('postres')">Postres</button>
-        <button class="categoria" onclick="filtrar('ponqués')">Ponqué</button>
-        <button class="categoria" onclick="filtrar('galletas')">Galletas</button>
-        <button class="categoria" onclick="filtrar('pan')">Pan</button> 
+        <button class="categoria activo" onclick="filtrar(event, 'todos')">Todos</button>
+        <button class="categoria" onclick="filtrar(event, 'tortas')">Tortas</button>
+        <button class="categoria" onclick="filtrar(event, 'postres')">Postres</button>
+        <button class="categoria" onclick="filtrar(event, 'ponqués')">Ponqué</button>
+        <button class="categoria" onclick="filtrar(event, 'galletas')">Galletas</button>
+        <button class="categoria" onclick="filtrar(event, 'pan')">Pan</button> 
       </div>
 
       <div class="productos">
@@ -68,9 +95,9 @@
           <img src="Pave123.jpeg" alt="Pavé">
           <h3>Pavê</h3>
           <p>Postre a base de crema bit, con galleta y topin a gusto. Es un postre típico de la cocina brasileña  </p>
-          <p>Chocorramo - Fresa - Leche en Polvo - Brownie - Oreo - Piazza Nucita - 9 oz</p>
+          <p>Chocorramo · Fresa · Leche en Polvo · Brownie · Oreo · Piazza Nucita · 9 oz</p>
           <span>$6.000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Pavê%20" target="_blank">
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Pavê%20" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -79,9 +106,9 @@
           <img src="Tres Leches.jpeg" alt="Tres Leches">
           <h3>Tres Leches</h3>
           <p>Bizcocho bañado con tres tipos de lácteos, terminando con una deliciosa chantilly y topin al gusto</p>
-          <p>Maní - Oreo - Chips Chocolate - M&M - 9 oz</p>
+          <p>Maní · Oreo · Chips Chocolate · M&M · 9 oz</p>
           <span>$6.000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Tres%20Leches" target="_blank">
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Tres%20Leches" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -90,9 +117,9 @@
           <img src="Torta Clasica.png" alt="Clásica">
           <h3>Clásica</h3>
           <p>Mantecada con relleno italiano </p>
-          <p>Nuez - Maní - Almendra </p>
-          <span>$6000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Torta%20Clásica" target="_blank">
+          <p>Nuez · Maní · Almendra</p>
+          <span>$6.000</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Torta%20Clásica" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -100,10 +127,10 @@
         <div class="producto" data-categoria="tortas">
           <img src="Torta Queso.png" alt="Torta de Queso">
           <h3>Torta de Queso</h3>
-          <p>Torta de queso</p>
-          <p> ---- </p>
-          <span>$6000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Torta%20de%20Queso" target="_blank">
+          <p>Deliciosa torta artesanal de queso, cremosa por dentro y dorada por fuera</p>
+          <p>Receta tradicional de la casa</p>
+          <span>$6.000</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Torta%20de%20Queso" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -112,9 +139,9 @@
           <img src="Ponqué de Natas.png" alt="Ponqué de Natas">
           <h3>Ponqué Natas</h3>
           <p>Deliciosa torta de Nata con tu relleno favorito</p>
-          <p>Chocolate - Arequipe - Fresa </p>
-          <span>$2000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Ponqué%20de%20Natas" target="_blank">
+          <p>Chocolate · Arequipe · Fresa</p>
+          <span>$2.000</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Ponqué%20de%20Natas" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -124,8 +151,8 @@
           <h3>Mini Galletas</h3>
           <p>Hechas con bastante cariño, las mini galleticas caseras </p>
           <p>Rellenas con Chips de Chocolate</p>
-          <span>$5000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20unas%20Mini%20galletas" target="_blank">
+          <span>$5.000</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20unas%20Mini%20galletas" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -135,8 +162,8 @@
           <h3>Chepacorina</h3>
           <p>Galletas artesanales tradicionales de El Carmen de Bolívar, Colombia</p>
           <p>Rellenas con queso</p>
-          <span>$2000</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20unas%20Chepacorinas" target="_blank">
+          <span>$2.000</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20unas%20Chepacorinas" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -146,8 +173,8 @@
           <h3>Croissant</h3>
           <p>Recién horneado, suave por dentro y crocante por fuera.</p>
           <p>Rellenas de queso</p>
-          <span>$----</span>
-          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Croissant" target="_blank">
+          <span>Consultar precio</span>
+          <a class="boton-pedido" href="https://wa.me/573143260400?text=Hola!%20Quiero%20pedir%20un%20Croissant" target="_blank" rel="noopener noreferrer">
             Pedir ahora 🛒
           </a>
         </div>
@@ -155,9 +182,24 @@
       </div>
     </section>
 
+  <!-- SECCIÓN: PEDIDOS ESPECIALES -->
+  <section id="pedidos-especiales" data-reveal>
+    <div class="especiales-contenido">
+      <h2>¿Tienes un evento especial? 🎉</h2>
+      <p>Hacemos pedidos personalizados para que tu momento sea aún más dulce</p>
+      <div class="especiales-grid">
+        <div class="especial-item">🎂<span>Cumpleaños</span></div>
+        <div class="especial-item">👶<span>Baby Shower</span></div>
+        <div class="especial-item">💍<span>Aniversarios</span></div>
+        <div class="especial-item">🎊<span>Eventos y reuniones</span></div>
+      </div>
+      <a href="https://wa.me/573143260400?text=Hola!%20Quiero%20cotizar%20un%20pedido%20personalizado%20para%20un%20evento%20especial%20🎉" target="_blank" rel="noopener noreferrer" class="btn-especial">
+        💬 Cotizar pedido personalizado
+      </a>
+    </div>
+  </section>
 
-
-  <section id="galeria">
+  <section id="galeria" data-reveal>
     <h2>Nuestra Galería</h2>
     <div class="carrusel">
       <button class="flecha izquierda" onclick="moverCarrusel(-1)">&#8592;</button>
@@ -182,7 +224,7 @@
   </section>
 
 
-  <section id="videos">
+  <section id="videos" data-reveal>
     <h2>Nuestros Momentos</h2>
     <div class="videos-grid">
 
@@ -223,29 +265,59 @@
     <span>✦ ✦ ✦</span>
   </div>
 
-  <section id="nosotros">
+  <section id="nosotros" data-reveal>
     <div class="nosotros-overlay">
       <h2 style="text-align: center;">Nuestra Historia</h2>
       <div class="nosotros-cuadro">
         <p>Todo comenzó con una torta clásica hecha con amor para alguien muy especial. Lo que empezó como un gesto del corazón, se convirtió en una idea que cambiaría nuestras vidas.</p>
         <p>Días después, esas palabras que parecían una broma se volvieron nuestro mayor sueño: montar una cafetería. Y así, entre risas e ilusión, Antojitos Nissi nació.</p>
         <p>Comenzamos compartiendo nuestros sabores con familiares y amigos, quienes nos llenaron de amor y nos animaron a seguir. Hoy, gracias a Dios, seguimos creciendo con nuevos productos y con el mismo amor de siempre. 🍰❤️</p>
-        <p>compartir sabores únicos hechos con amor y dedicación.</p>
-        <p style="text-align: center;"> -----------------------------------------------------</p>
-        <p>Cada producto es preparado con los mejores ingredientes, pensando siempre en darte una experiencia dulce e inolvidable.</p>
-        <p>Cada antojo se convierte en un momento especial. 🍰☕</p>
-        <p style="text-align: center;"> -----------------------------------------------------</p>
+        <hr class="separador">
+        <p>Cada producto es preparado con los mejores ingredientes, pensando siempre en darte una experiencia dulce e inolvidable. Cada antojo se convierte en un momento especial. 🍰☕</p>
+        <hr class="separador">
         <p style="text-align: center;"><strong>Este sueño apenas empieza, y tú eres parte de él.</strong></p>
       </div>
     </div>
   </section>
 
    
+  <!-- SECCIÓN: TESTIMONIOS -->
+  <section id="testimonios" data-reveal>
+    <h2>Lo que dicen nuestros clientes ❤️</h2>
+    <p class="testimonios-sub">Cada pedido hecho con amor, cada cliente satisfecho</p>
+    <div class="testimonios-grid">
+
+      <div class="testimonio">
+        <div class="estrellas">★★★★★</div>
+        <p>"El Pavê de Chocorramo es increíble, nunca había probado algo tan delicioso. Lo pedí para el cumpleaños de mi mamá y fue el éxito de la fiesta. ¡Todos me preguntaron dónde lo compré!"</p>
+        <span class="cliente-nombre">— Laura M.</span>
+      </div>
+
+      <div class="testimonio">
+        <div class="estrellas">★★★★★</div>
+        <p>"Las Chepacorinas me transportaron a mi infancia. Son exactamente como las recuerdo, caseras y con ese sabor único. Ya hice mi tercer pedido y no será el último."</p>
+        <span class="cliente-nombre">— Carlos R.</span>
+      </div>
+
+      <div class="testimonio">
+        <div class="estrellas">★★★★★</div>
+        <p>"Pedí la Torta Clásica para una reunión de trabajo y no quedó ni un pedazo. El servicio fue rapidísimo y el empaque muy cuidado. 100% recomendados."</p>
+        <span class="cliente-nombre">— Paola V.</span>
+      </div>
+
+      <div class="testimonio">
+        <div class="estrellas">★★★★★</div>
+        <p>"El Tres Leches con topin de Oreo es lo mejor que he probado en mucho tiempo. Se nota que está hecho con amor y con los mejores ingredientes. ¡Gracias Nissi!"</p>
+        <span class="cliente-nombre">— Andrés T.</span>
+      </div>
+
+    </div>
+  </section>
+
   <section id="contacto">
     <h2>Contáctanos</h2>
-    <p>&#128745;&#128745; ¡¡"Haz de tu vida un sueño, y de tu sueño una realidad"!! &#127761;&#127761; </p>
-      <! &#x1F3AF;&#x1F3AF;>
-    <p>📍 Proximamente. Punto Físico</p>
+    <p>🎯🎯 ¡¡"Haz de tu vida un sueño, y de tu sueño una realidad"!! 🌙🌙</p>
+    <p>📍 Próximamente. Punto Físico</p>
     <p>&#128231; Pedidos Online </p>
     <p>📞 +57 320 214 5786</p>
     <p>📞 +57 314 326 0400</p>
@@ -254,10 +326,13 @@
     
     <form class="formulario" action="https://formspree.io/f/xbdwpwnp" method="POST">
       <input type="hidden" name="_next" value="https://angeldaniel2812.github.io/Antojitos-Nissi/">
-      <input type="text" name="nombre" placeholder="Tu nombre">
-      <input type="email" name="email" placeholder="Tu correo">
-      <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
-      <button>Enviar mensaje</button>
+      <label for="nombre" class="visually-hidden">Tu nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      <label for="email" class="visually-hidden">Tu correo</label>
+      <input type="email" id="email" name="email" placeholder="Tu correo" required>
+      <label for="mensaje" class="visually-hidden">Tu mensaje</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar mensaje</button>
     </form>
       
   </section>
@@ -265,10 +340,10 @@
   <footer>
     <p>© 2026 Antojitos Nissi. Todos los derechos reservados.</p>
     <div class="redes">
-      <a href="https://instagram.com/nissi_antojitos/" target="_blank">
+      <a href="https://instagram.com/nissi_antojitos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Antojitos Nissi">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://wa.me/573143260400" target="_blank">
+      <a href="https://wa.me/573143260400" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Antojitos Nissi">
         <i class="fab fa-whatsapp"></i>
       </a>
       
@@ -276,10 +351,10 @@
   </footer>
 
   <div class="flotantes">
-    <a href="https://wa.me/573143260400" target="_blank" class="whatsapp">
+    <a href="https://wa.me/573143260400" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="Contactar por WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
-    <a href="https://instagram.com/nissi_antojitos/" target="_blank" class="instagram">
+    <a href="https://instagram.com/nissi_antojitos/" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Ver Instagram">
       <i class="fab fa-instagram"></i>
     </a>
   </div>
