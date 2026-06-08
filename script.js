@@ -112,6 +112,51 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
+// ─── FORMULARIO DE CONTACTO (AJAX) ───
+const formulario = document.getElementById('formulario-contacto');
+if (formulario) {
+  formulario.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = formulario.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const datos = new FormData(formulario);
+
+    try {
+      const respuesta = await fetch('https://formspree.io/f/xbdwpwnp', {
+        method: 'POST',
+        body: datos,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (respuesta.ok) {
+        formulario.reset();
+        formulario.style.display = 'none';
+        const exito = document.getElementById('mensaje-exito');
+        if (exito) exito.style.display = 'block';
+
+        // Vuelve a mostrar el formulario después de 5 segundos
+        setTimeout(() => {
+          formulario.style.display = 'flex';
+          if (exito) exito.style.display = 'none';
+          btn.disabled = false;
+          btn.textContent = 'Enviar mensaje';
+        }, 5000);
+      } else {
+        alert('Hubo un error al enviar. Por favor intenta de nuevo.');
+        btn.disabled = false;
+        btn.textContent = 'Enviar mensaje';
+      }
+    } catch {
+      alert('Error de conexión. Verifica tu internet e intenta de nuevo.');
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensaje';
+    }
+  });
+}
+
 // ─── PWA: REGISTRO DEL SERVICE WORKER ───
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

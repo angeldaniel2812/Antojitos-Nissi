@@ -190,10 +190,10 @@
       <h2>¿Tienes un evento especial? 🎉</h2>
       <p>Hacemos pedidos personalizados para que tu momento sea aún más dulce</p>
       <div class="especiales-grid">
-        <div class="especial-item">🎂<span>Cumpleaños</span></div>
-        <div class="especial-item">👶<span>Baby Shower</span></div>
-        <div class="especial-item">💍<span>Aniversarios</span></div>
-        <div class="especial-item">🎊<span>Eventos y reuniones</span></div>
+        <div class="especial-item"><img src="Cumple.png" alt="Cumpleaños"><span>Cumpleaños</span></div>
+        <div class="especial-item"><img src="Baby.png" alt="Baby Shower"><span>Baby Shower</span></div>
+        <div class="especial-item"><img src="Anive.png" alt="Aniversarios"><span>Aniversarios</span></div>
+        <div class="especial-item"><img src="Reun.png" alt="Eventos y reuniones"><span>Eventos y reuniones</span></div>
       </div>
       <a href="https://wa.me/573143260400?text=Hola!%20Quiero%20cotizar%20un%20pedido%20personalizado%20para%20un%20evento%20especial%20🎉" target="_blank" rel="noopener noreferrer" class="btn-especial">
         💬 Cotizar pedido personalizado
@@ -325,8 +325,7 @@
     <p>📧 antojitosnissi87@gmail.com</p>
     <p>🕐 Lunes a Sábado: 7am - 8pm</p>
     
-    <form class="formulario" action="https://formspree.io/f/xbdwpwnp" method="POST">
-      <input type="hidden" name="_next" value="https://angeldaniel2812.github.io/Antojitos-Nissi/">
+    <form class="formulario" id="formulario-contacto">
       <label for="nombre" class="visually-hidden">Tu nombre</label>
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
       <label for="email" class="visually-hidden">Tu correo</label>
@@ -335,6 +334,9 @@
       <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar mensaje</button>
     </form>
+    <div id="mensaje-exito" style="display:none; margin-top:16px; background:rgba(255,255,255,0.2); border-radius:12px; padding:16px 24px; color:#fff; font-family:'Georgia',serif; font-size:15px; text-align:center;">
+      ✅ ¡Mensaje enviado con éxito! Pronto nos pondremos en contacto contigo. 🎂
+    </div>
       
   </section>
 
